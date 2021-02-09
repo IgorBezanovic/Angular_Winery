@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+
+	<a class="navbar-brand" [routerLink]="['/wines/home']">Wine Cellar</a>
+
+	<ul class="navbar-nav mr-auto">
+		<li class="nav-item">
+			<a class="nav-link" [routerLink]="['/wines']">Wines</a>
+		</li>
+
+		<li class="nav-item">
+			<a class="nav-link" [routerLink]="['/wines/add']">Add wine</a>
+		</li>		
+	</ul>
+
+	<ul class="navbar-nav ml-auto">   
+		<li class="nav-item">
+			<a class="nav-link" [routerLink]="['/wines/about']">About us</a>
+		</li>
+	</ul>
+</nav>

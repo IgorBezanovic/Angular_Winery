@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-4">
+        <app-pagination [totalItems]="count" [pageSize]="params.pageSize"
+        (onPageSelected)="changePage($event)"></app-pagination>
+    </div>
+    <div class="col-6">
+        <app-search (onSearch)="searchbyName($event)"></app-search>
+    </div>
+</div>
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Name <button class="btn btn-link" (click)="onChangeSortCriteria('name')">^</button> </th>
+                <th>Year <button class="btn btn-link" (click)="onChangeSortCriteria('year')">^</button> </th>
+                <th>Grapes <button class="btn btn-link" (click)="onChangeSortCriteria('grapes')">^</button> </th>
+                <th>Country <button class="btn btn-link" (click)="onChangeSortCriteria('country')">^</button> </th>
+                <th>Region <button class="btn btn-link" (click)="onChangeSortCriteria('region')">^</button> </th>
+                <th>Delete</th>
+                <th>Edit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let wine of wineList">
+                <td>{{wine.name}}</td>
+                <td>{{wine.year}}</td>
+                <td>{{wine.grapes}}</td>
+                <td>{{wine.country}}</td>
+                <td>{{wine.region}}</td>
+                <td><button class="btn btn-link" (click)="onDelete(wine._id)">Delete</button></td>
+                <td><button class="btn btn-link" [routerLink]="['/wines/', wine._id]">edit</button></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+      <div class="col-1"></div>
+</div>
